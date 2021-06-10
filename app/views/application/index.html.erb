@@ -1,1 +1,26 @@
-Test
+<html>
+    <head>
+        <title>Ile de Ré - Réservation et gestion de planning</title>
+    </head>
+    <body>
+        <% if @user %>
+            <h2><img src="<%= @user['info']['image'] %>"/></h2>
+            <h1>Welcome, <%= @user['info']['name'] %></h1>
+        <% end %>
+
+        <button onclick="lock.show();">Login</button>
+
+        <script src="https://cdn.auth0.com/js/lock/10.9.1/lock.min.js"></script>
+        <script>
+        var lock = new Auth0Lock('bYaPTFOkJg6EGFGohuBB4qQPWRjNr5Uc', 'vincentkelleher.eu.auth0.com', {
+            auth: {
+                redirectUrl: '<%= url_for(action: 'callback', controller: 'auth0', only_path: false) %>',
+                responseType: 'code',
+                params: {
+                    scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
+                }
+            }
+        });
+        </script>
+    </body>
+</html>
