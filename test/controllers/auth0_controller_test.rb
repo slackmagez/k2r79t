@@ -22,4 +22,9 @@ class Auth0ControllerTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
 
+  test "should logout and redirect to root" do
+    get auth0_logout_url
+    assert_redirected_to root_path
+    assert_nil session[:userinfo]
+  end
 end
