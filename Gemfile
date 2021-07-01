@@ -53,7 +53,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Auth0 gems
-gem 'omniauth', '~> 1.3.1'
-gem 'omniauth-auth0', '~> 1.4.2'
+gem 'knock', '~> 2.0'
 
 gem 'dotenv-rails', require: 'dotenv/rails-now', group: [:development, :test]
