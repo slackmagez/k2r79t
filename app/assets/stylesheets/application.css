@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ //= require bootstrap/dist/css/bootstrap
+ //= require tether/dist/css/tether
+ //= require_tree ./global
